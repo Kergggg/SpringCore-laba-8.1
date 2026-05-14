@@ -3,15 +3,21 @@ package com.yet.spring.core.beans;
 public class Client {
 
     private String id;
-
     private String fullName;
-    
     private String greeting;
+    private String city;
 
     public Client(String id, String fullName) {
         super();
         this.id = id;
         this.fullName = fullName;
+    }
+
+    public Client(String id, String fullName, String city) {
+        super();
+        this.id = id;
+        this.fullName = fullName;
+        this.city = city;
     }
 
     public String getId() {
@@ -38,4 +44,16 @@ public class Client {
         this.greeting = greeting;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{id='" + id + "', fullName='" + fullName + "', city='" + city + "'}";
+    }
 }

@@ -20,7 +20,7 @@
         system-properties-mode="OVERRIDE" ignore-resource-not-found="false"/>
 
     <bean id="client" class="com.yet.spring.core.beans.Client"
-        p:greeting="${greeting}">
+        p:greeting="${greeting}" p:city="${city}">
         <constructor-arg index="0" value="${id}" />
         <constructor-arg value="${name}" />
     </bean>
@@ -28,6 +28,9 @@
     <util:map id="loggerMap">
         <entry key="INFO" value-ref="consoleEventLogger" />
         <entry key="ERROR" value-ref="combinedEventLogger" />
+        <entry key="WARNING" value-ref="fileEventLogger" />
+        <entry key="DEBUG" value-ref="consoleEventLogger" />
+        <entry key="CRITICAL" value-ref="combinedEventLogger" />
     </util:map>
 
     <bean id="app" class="com.yet.spring.core.App">

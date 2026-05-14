@@ -1,0 +1,42 @@
+2026-05-14 18:53:39 [main] INFO  c.y.s.core.loggers.FileEventLogger - FileEventLogger initialized with file: target/events_log.txt
+2026-05-14 18:53:39 [main] INFO  com.yet.spring.core.loggers.DBLogger - Initializing DBLogger with schema: ROOT
+2026-05-14 18:53:39 [main] INFO  com.yet.spring.core.loggers.DBLogger - Schema ROOT created or already exists
+2026-05-14 18:53:39 [main] INFO  com.yet.spring.core.loggers.DBLogger - Table t_event created
+2026-05-14 18:53:39 [main] DEBUG com.yet.spring.core.loggers.DBLogger - Initialized Event.AUTO_ID to 9
+2026-05-14 18:53:40 [main] INFO  c.y.s.core.loggers.FileEventLogger - FileEventLogger initialized with file: target/events_log.txt
+2026-05-14 18:53:40 [main] INFO  c.y.s.c.loggers.ConsoleEventLogger - Console event logged: Event [id=9, msg=Some event for John Smith, date=14.05.2026 18:53:40]
+2026-05-14 18:53:40 [main] INFO  c.y.s.c.loggers.ConsoleEventLogger - Console event logged: Event [id=10, msg=One more event for John Smith, date=14.05.2026 18:53:40]
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 11
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 12
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 12
+2026-05-14 18:53:40 [main] INFO  com.yet.spring.core.loggers.DBLogger - Saved to DB event with id 12
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 13
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 14
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 15
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 16
+2026-05-14 18:53:40 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 16
+2026-05-14 18:53:40 [main] INFO  com.yet.spring.core.loggers.DBLogger - Saved to DB event with id 16
+2026-05-14 18:53:40 [main] INFO  com.yet.spring.core.loggers.DBLogger - Total events in the DB: 4
+2026-05-14 18:53:40 [main] DEBUG com.yet.spring.core.loggers.DBLogger - Retrieved 4 events from DB
+2026-05-14 18:53:40 [main] DEBUG com.yet.spring.core.loggers.DBLogger - All DB Event ids: 4, 8, 12, 16
+2026-05-14 19:03:59 [main] INFO  c.y.s.core.loggers.FileEventLogger - FileEventLogger initialized with file: target/events_log.txt
+2026-05-14 19:03:59 [main] INFO  com.yet.spring.core.loggers.DBLogger - Initializing DBLogger with schema: ROOT
+2026-05-14 19:03:59 [main] INFO  com.yet.spring.core.loggers.DBLogger - Schema ROOT created or already exists
+2026-05-14 19:03:59 [main] INFO  com.yet.spring.core.loggers.DBLogger - Table t_event created
+2026-05-14 19:03:59 [main] DEBUG com.yet.spring.core.loggers.DBLogger - Initialized Event.AUTO_ID to 17
+2026-05-14 19:03:59 [main] INFO  c.y.s.core.loggers.FileEventLogger - FileEventLogger initialized with file: target/events_log.txt
+2026-05-14 19:03:59 [main] INFO  c.y.s.c.loggers.ConsoleEventLogger - Console event logged: Event [id=17, msg=Some event for John Smith, date=14.05.2026 19:03:59]
+2026-05-14 19:03:59 [main] INFO  c.y.s.c.loggers.ConsoleEventLogger - Console event logged: Event [id=18, msg=One more event for John Smith, date=14.05.2026 19:03:59]
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 19
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 20
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 20
+2026-05-14 19:03:59 [main] INFO  com.yet.spring.core.loggers.DBLogger - Saved to DB event with id 20
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 21
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 22
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 23
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 24
+2026-05-14 19:03:59 [main] DEBUG c.y.s.core.loggers.FileEventLogger - Event written to file: 24
+2026-05-14 19:03:59 [main] INFO  com.yet.spring.core.loggers.DBLogger - Saved to DB event with id 24
+2026-05-14 19:03:59 [main] INFO  com.yet.spring.core.loggers.DBLogger - Total events in the DB: 6
+2026-05-14 19:03:59 [main] DEBUG com.yet.spring.core.loggers.DBLogger - Retrieved 6 events from DB
+2026-05-14 19:03:59 [main] DEBUG com.yet.spring.core.loggers.DBLogger - All DB Event ids: 4, 8, 12, 16, 20, 24

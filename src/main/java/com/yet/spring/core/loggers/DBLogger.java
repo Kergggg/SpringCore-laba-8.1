@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,8 +16,7 @@ import com.yet.spring.core.beans.Event;
 
 public class DBLogger extends AbstractLogger {
 
-    private static final String SQL_ERROR_STATE_SCHEMA_EXISTS = "X0Y68";
-    private static final String SQL_ERROR_STATE_TABLE_EXISTS = "X0Y32";
+    private static final Logger logger = LoggerFactory.getLogger(DBLogger.class);
 
     private JdbcTemplate jdbcTemplate;
     private String schema;
@@ -26,87 +27,99 @@ public class DBLogger extends AbstractLogger {
     }
 
     public void init() {
+        logger.info("Initializing DBLogger with schema: {}", schema);
         createDBSchema();
         createTableIfNotExists();
         updateEventAutoId();
     }
-    
+
     public void destroy() {
         int totalEvents = getTotalEvents();
+        logger.info("Total events in the DB: {}", totalEvents);
         System.out.println("Total events in the DB: " + totalEvents);
-        
+
         List<Event> allEvents = getAllEvents();
         String allEventIds = allEvents.stream()
                 .map(Event::getId)
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
+        logger.debug("All DB Event ids: {}", allEventIds);
         System.out.println("All DB Event ids: " + allEventIds);
     }
 
     private void createDBSchema() {
         try {
-            jdbcTemplate.update("CREATE SCHEMA " + schema);
+            jdbcTemplate.update("CREATE SCHEMA IF NOT EXISTS " + schema);
+            logger.info("Schema {} created or already exists", schema);
+            System.out.println("Schema " + schema + " created or already exists");
         } catch (DataAccessException e) {
-            Throwable causeException = e.getCause();
-            if (causeException instanceof SQLException) {
-                SQLException sqlException = (SQLException) causeException;
-                if (sqlException.getSQLState().equals(SQL_ERROR_STATE_SCHEMA_EXISTS)) {
-                    System.out.println("Schema already exists");
-                } else {
-                    throw e;
-                }
-            } else {
-                throw e;
-            }
+            logger.warn("Could not create schema: {}", e.getMessage());
+            System.out.println("Could not create schema: " + e.getMessage());
         }
     }
 
     private void createTableIfNotExists() {
         try {
-            jdbcTemplate.update("CREATE TABLE t_event (" + "id INT NOT NULL PRIMARY KEY," + "date TIMESTAMP,"
-                    + "msg VARCHAR(255)" + ")");
-
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS " + schema + ".t_event (" +
+                    "id INT NOT NULL PRIMARY KEY, " +
+                    "date TIMESTAMP, " +
+                    "msg VARCHAR(255)" +
+                    ")";
+            jdbcTemplate.update(createTableSQL);
+            logger.info("Table t_event created");
             System.out.println("Created table t_event");
         } catch (DataAccessException e) {
-            Throwable causeException = e.getCause();
-            if (causeException instanceof SQLException) {
-                SQLException sqlException = (SQLException) causeException;
-                if (sqlException.getSQLState().equals(SQL_ERROR_STATE_TABLE_EXISTS)) {
-                    System.out.println("Table already exists");
-                } else {
-                    throw e;
-                }
-            } else {
-                throw e;
-            }
+            logger.error("Could not create table: {}", e.getMessage());
+            System.out.println("Could not create table: " + e.getMessage());
         }
     }
-    
+
     private void updateEventAutoId() {
         int maxId = getMaxId();
         Event.initAutoId(maxId + 1);
-        System.out.println("Initialized Event.AUTO_ID to " + maxId);
+        logger.debug("Initialized Event.AUTO_ID to {}", maxId + 1);
+        System.out.println("Initialized Event.AUTO_ID to " + (maxId + 1));
     }
 
     private int getMaxId() {
-        Integer count = jdbcTemplate.queryForObject("select max(id) from t_event", Integer.class);
-        return count != null ? count.intValue() : 0;
+        try {
+            Integer count = jdbcTemplate.queryForObject(
+                    "SELECT COALESCE(MAX(id), 0) FROM " + schema + ".t_event",
+                    Integer.class);
+            return count != null ? count : 0;
+        } catch (DataAccessException e) {
+            logger.warn("Could not get max ID: {}", e.getMessage());
+            return 0;
+        }
     }
 
     @Override
     public void logEvent(Event event) {
-        jdbcTemplate.update("INSERT INTO t_event (id, date, msg) VALUES (?,?,?)", event.getId(), event.getDate(),
-                event.toString());
-        System.out.println("Saved to DB event with id " + event.getId());
+        try {
+            String sql = "INSERT INTO " + schema + ".t_event (id, date, msg) VALUES (?,?,?)";
+            jdbcTemplate.update(sql, event.getId(), event.getDate(), event.toString());
+            logger.info("Saved to DB event with id {}", event.getId());
+            System.out.println("Saved to DB event with id " + event.getId());
+        } catch (DataAccessException e) {
+            logger.error("Failed to save event to DB", e);
+        }
     }
 
     public int getTotalEvents() {
-        Integer count = jdbcTemplate.queryForObject("select count(*) from t_event", Integer.class);
-        return count != null ? count.intValue() : 0;
+        try {
+            Integer count = jdbcTemplate.queryForObject(
+                    "SELECT COUNT(*) FROM " + schema + ".t_event",
+                    Integer.class);
+            return count != null ? count : 0;
+        } catch (DataAccessException e) {
+            logger.warn("Could not get total events: {}", e.getMessage());
+            return 0;
+        }
     }
 
     public List<Event> getAllEvents() {
-        List<Event> list = jdbcTemplate.query("select * from t_event", new RowMapper<Event>() {
+        String sql = "SELECT * FROM " + schema + ".t_event";
+        List<Event> list = jdbcTemplate.query(sql, new RowMapper<Event>() {
             @Override
             public Event mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Integer id = rs.getInt("id");
@@ -116,7 +129,7 @@ public class DBLogger extends AbstractLogger {
                 return event;
             }
         });
+        logger.debug("Retrieved {} events from DB", list.size());
         return list;
     }
-
 }
