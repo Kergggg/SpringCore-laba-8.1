@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:util="http://www.springframework.org/schema/util"
     xmlns:aop="http://www.springframework.org/schema/aop"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-        http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util-3.2.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
         
@@ -16,9 +13,7 @@
     <bean id="loggingAspect" class="com.yet.spring.core.aspects.LoggingAspect"/>
     
     <bean id="statisticsAspect" class="com.yet.spring.core.aspects.StatisticsAspect"/>
-    
-    <!-- Example of how to define aspect using XML -->
-    
+
     <bean id="consoleLoggerLimitAspect" class="com.yet.spring.core.aspects.ConsoleLoggerLimitAspect">
         <constructor-arg value="${console.logger.max:2}"/> <!-- take value from properties, if not found, then default is 2 -->
         <constructor-arg ref="fileEventLogger"/>

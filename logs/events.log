@@ -1,42 +1,126 @@
-2026-05-14 18:53:39 - FileEventLogger initialized with file: target/events_log.txt
-2026-05-14 18:53:39 - Initializing DBLogger with schema: ROOT
-2026-05-14 18:53:39 - Schema ROOT created or already exists
-2026-05-14 18:53:39 - Table t_event created
-2026-05-14 18:53:39 - Initialized Event.AUTO_ID to 9
-2026-05-14 18:53:40 - FileEventLogger initialized with file: target/events_log.txt
-2026-05-14 18:53:40 - Console event logged: Event [id=9, msg=Some event for John Smith, date=14.05.2026 18:53:40]
-2026-05-14 18:53:40 - Console event logged: Event [id=10, msg=One more event for John Smith, date=14.05.2026 18:53:40]
-2026-05-14 18:53:40 - Event written to file: 11
-2026-05-14 18:53:40 - Event written to file: 12
-2026-05-14 18:53:40 - Event written to file: 12
-2026-05-14 18:53:40 - Saved to DB event with id 12
-2026-05-14 18:53:40 - Event written to file: 13
-2026-05-14 18:53:40 - Event written to file: 14
-2026-05-14 18:53:40 - Event written to file: 15
-2026-05-14 18:53:40 - Event written to file: 16
-2026-05-14 18:53:40 - Event written to file: 16
-2026-05-14 18:53:40 - Saved to DB event with id 16
-2026-05-14 18:53:40 - Total events in the DB: 4
-2026-05-14 18:53:40 - Retrieved 4 events from DB
-2026-05-14 18:53:40 - All DB Event ids: 4, 8, 12, 16
-2026-05-14 19:03:59 - FileEventLogger initialized with file: target/events_log.txt
-2026-05-14 19:03:59 - Initializing DBLogger with schema: ROOT
-2026-05-14 19:03:59 - Schema ROOT created or already exists
-2026-05-14 19:03:59 - Table t_event created
-2026-05-14 19:03:59 - Initialized Event.AUTO_ID to 17
-2026-05-14 19:03:59 - FileEventLogger initialized with file: target/events_log.txt
-2026-05-14 19:03:59 - Console event logged: Event [id=17, msg=Some event for John Smith, date=14.05.2026 19:03:59]
-2026-05-14 19:03:59 - Console event logged: Event [id=18, msg=One more event for John Smith, date=14.05.2026 19:03:59]
-2026-05-14 19:03:59 - Event written to file: 19
-2026-05-14 19:03:59 - Event written to file: 20
-2026-05-14 19:03:59 - Event written to file: 20
-2026-05-14 19:03:59 - Saved to DB event with id 20
-2026-05-14 19:03:59 - Event written to file: 21
-2026-05-14 19:03:59 - Event written to file: 22
-2026-05-14 19:03:59 - Event written to file: 23
-2026-05-14 19:03:59 - Event written to file: 24
-2026-05-14 19:03:59 - Event written to file: 24
-2026-05-14 19:03:59 - Saved to DB event with id 24
-2026-05-14 19:03:59 - Total events in the DB: 6
-2026-05-14 19:03:59 - Retrieved 6 events from DB
-2026-05-14 19:03:59 - All DB Event ids: 4, 8, 12, 16, 20, 24
+2026-05-19 03:07:42 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:07:42 - Initializing DBLogger with schema: ROOT
+2026-05-19 03:07:43 - Schema ROOT created or already exists
+2026-05-19 03:07:43 - Table t_event created
+2026-05-19 03:07:43 - Initialized Event.AUTO_ID to 25
+2026-05-19 03:07:43 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:07:43 - Console event logged: Event [id=25, msg=Some event for John Smith, date=19.05.2026 3:07:43]
+2026-05-19 03:07:43 - Console event logged: Event [id=26, msg=One more event for John Smith, date=19.05.2026 3:07:43]
+2026-05-19 03:07:43 - Event written to file: 27
+2026-05-19 03:07:43 - Event written to file: 28
+2026-05-19 03:07:43 - Event written to file: 28
+2026-05-19 03:07:43 - Saved to DB event with id 28
+2026-05-19 03:07:43 - Event written to file: 29
+2026-05-19 03:07:43 - Event written to file: 30
+2026-05-19 03:07:43 - Event written to file: 31
+2026-05-19 03:07:43 - Event written to file: 32
+2026-05-19 03:07:43 - Event written to file: 32
+2026-05-19 03:07:43 - Saved to DB event with id 32
+2026-05-19 03:07:43 - Total events in the DB: 8
+2026-05-19 03:07:43 - Retrieved 8 events from DB
+2026-05-19 03:07:43 - All DB Event ids: 4, 8, 12, 16, 20, 24, 28, 32
+2026-05-19 03:08:24 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:08:24 - Initializing DBLogger with schema: ROOT
+2026-05-19 03:08:25 - Schema ROOT created or already exists
+2026-05-19 03:08:25 - Table t_event created
+2026-05-19 03:08:25 - Initialized Event.AUTO_ID to 33
+2026-05-19 03:08:25 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:08:25 - Console event logged: Event [id=33, msg=Some event for John Smith, date=19.05.2026 3:08:25]
+2026-05-19 03:08:25 - Console event logged: Event [id=34, msg=One more event for John Smith, date=19.05.2026 3:08:25]
+2026-05-19 03:08:25 - Event written to file: 35
+2026-05-19 03:08:25 - Event written to file: 36
+2026-05-19 03:08:25 - Event written to file: 36
+2026-05-19 03:08:25 - Saved to DB event with id 36
+2026-05-19 03:08:25 - Event written to file: 37
+2026-05-19 03:08:25 - Event written to file: 38
+2026-05-19 03:08:25 - Event written to file: 39
+2026-05-19 03:08:25 - Event written to file: 40
+2026-05-19 03:08:25 - Event written to file: 40
+2026-05-19 03:08:25 - Saved to DB event with id 40
+2026-05-19 03:08:25 - Total events in the DB: 10
+2026-05-19 03:08:25 - Retrieved 10 events from DB
+2026-05-19 03:08:25 - All DB Event ids: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40
+2026-05-19 03:32:37 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:32:37 - Initializing DBLogger with schema: ROOT
+2026-05-19 03:32:37 - Schema ROOT created or already exists
+2026-05-19 03:32:37 - Table t_event created
+2026-05-19 03:32:37 - Initialized Event.AUTO_ID to 41
+2026-05-19 03:32:37 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:32:37 - Console event logged: Event [id=41, msg=Some event for John Smith, date=19.05.2026 3:32:37]
+2026-05-19 03:32:37 - Console event logged: Event [id=42, msg=One more event for John Smith, date=19.05.2026 3:32:37]
+2026-05-19 03:32:37 - Event written to file: 43
+2026-05-19 03:32:37 - Event written to file: 44
+2026-05-19 03:32:37 - Event written to file: 44
+2026-05-19 03:32:37 - Saved to DB event with id 44
+2026-05-19 03:32:37 - Event written to file: 45
+2026-05-19 03:32:37 - Event written to file: 46
+2026-05-19 03:32:37 - Event written to file: 47
+2026-05-19 03:32:37 - Event written to file: 48
+2026-05-19 03:32:37 - Event written to file: 48
+2026-05-19 03:32:37 - Saved to DB event with id 48
+2026-05-19 03:32:37 - Total events in the DB: 12
+2026-05-19 03:32:37 - Retrieved 12 events from DB
+2026-05-19 03:32:37 - All DB Event ids: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48
+2026-05-19 03:35:39 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:35:39 - Initializing DBLogger with schema: ROOT
+2026-05-19 03:35:39 - Schema ROOT created or already exists
+2026-05-19 03:35:39 - Table t_event created
+2026-05-19 03:35:39 - Initialized Event.AUTO_ID to 49
+2026-05-19 03:35:39 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:35:39 - Console event logged: Event [id=49, msg=Some event for John Smith, date=19.05.2026 3:35:39]
+2026-05-19 03:35:39 - Console event logged: Event [id=50, msg=One more event for John Smith, date=19.05.2026 3:35:39]
+2026-05-19 03:35:39 - Event written to file: 51
+2026-05-19 03:35:39 - Event written to file: 52
+2026-05-19 03:35:39 - Event written to file: 52
+2026-05-19 03:35:39 - Saved to DB event with id 52
+2026-05-19 03:35:39 - Event written to file: 53
+2026-05-19 03:35:39 - Event written to file: 54
+2026-05-19 03:35:39 - Event written to file: 55
+2026-05-19 03:35:39 - Event written to file: 56
+2026-05-19 03:35:39 - Event written to file: 56
+2026-05-19 03:35:39 - Saved to DB event with id 56
+2026-05-19 03:35:39 - Total events in the DB: 14
+2026-05-19 03:35:39 - Retrieved 14 events from DB
+2026-05-19 03:35:39 - All DB Event ids: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56
+2026-05-19 03:35:54 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:35:55 - Initializing DBLogger with schema: ROOT
+2026-05-19 03:35:55 - Schema ROOT created or already exists
+2026-05-19 03:35:55 - Table t_event created
+2026-05-19 03:35:55 - Initialized Event.AUTO_ID to 57
+2026-05-19 03:35:55 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:35:55 - Console event logged: Event [id=57, msg=Some event for John Smith, date=19.05.2026 3:35:55]
+2026-05-19 03:35:55 - Console event logged: Event [id=58, msg=One more event for John Smith, date=19.05.2026 3:35:55]
+2026-05-19 03:35:55 - Event written to file: 59
+2026-05-19 03:35:55 - Event written to file: 60
+2026-05-19 03:35:55 - Event written to file: 60
+2026-05-19 03:35:55 - Saved to DB event with id 60
+2026-05-19 03:35:55 - Event written to file: 61
+2026-05-19 03:35:55 - Event written to file: 62
+2026-05-19 03:35:55 - Event written to file: 63
+2026-05-19 03:35:55 - Event written to file: 64
+2026-05-19 03:35:55 - Event written to file: 64
+2026-05-19 03:35:55 - Saved to DB event with id 64
+2026-05-19 03:35:55 - Total events in the DB: 16
+2026-05-19 03:35:55 - Retrieved 16 events from DB
+2026-05-19 03:35:55 - All DB Event ids: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64
+2026-05-19 03:36:04 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:36:04 - Initializing DBLogger with schema: ROOT
+2026-05-19 03:36:05 - Schema ROOT created or already exists
+2026-05-19 03:36:05 - Table t_event created
+2026-05-19 03:36:05 - Initialized Event.AUTO_ID to 65
+2026-05-19 03:36:05 - FileEventLogger initialized with file: target/events_log.txt
+2026-05-19 03:36:05 - Console event logged: Event [id=65, msg=Some event for John Smith, date=19.05.2026 3:36:05]
+2026-05-19 03:36:05 - Console event logged: Event [id=66, msg=One more event for John Smith, date=19.05.2026 3:36:05]
+2026-05-19 03:36:05 - Event written to file: 67
+2026-05-19 03:36:05 - Event written to file: 68
+2026-05-19 03:36:05 - Event written to file: 68
+2026-05-19 03:36:05 - Saved to DB event with id 68
+2026-05-19 03:36:05 - Event written to file: 69
+2026-05-19 03:36:05 - Event written to file: 70
+2026-05-19 03:36:05 - Event written to file: 71
+2026-05-19 03:36:05 - Event written to file: 72
+2026-05-19 03:36:05 - Event written to file: 72
+2026-05-19 03:36:05 - Saved to DB event with id 72
+2026-05-19 03:36:05 - Total events in the DB: 18
+2026-05-19 03:36:05 - Retrieved 18 events from DB
+2026-05-19 03:36:05 - All DB Event ids: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72
